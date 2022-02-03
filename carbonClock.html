@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Countdown 2º Clock</title>
+        <link rel="stylesheet" type="text/css" href="carbon_clock.css">
+        <script type="text/javascript" src="carbon_clock-Dateien/jquery_002.js"></script>
+        <script type="text/javascript" src="carbon_clock-Dateien/CO2Calculator.js?i=1628853699"></script>
+    </head>
+    <body>
+        <video id="video_background" preload="auto" autoplay loop muted volume="0"> 
+            <source src="carbon_clock-Dateien/MCC_CO2_ani_2_bb_small_lq.mp4" type="video/mp4"> 
+        </video>
+        <div id="main">
+            <div id="wrapper" align="center">
+                <div id="footer">Minx, Creutzig, Edenhofer: "Climate goals require fast learning in negative emission technologies" (in press)</div>
+                <div id="buttons">
+                    <ul id="deg">
+                        <li><a id="2" href="javascript:void(0)" class="active">2°C scenario</a></li>
+                        <li id="onedeg"><a id="1.5" href="javascript:void(0)">1.5°C scenario</a></li>
+                    </ul>
+                    <ul id="range" style="display: none">
+                        <li><a id="max" href="javascript:void(0)">upper estimate</a></li>
+                        <li><a id="med" href="javascript:void(0)" class="active">medium estimate</a></li>
+                        <li><a id="min" href="javascript:void(0)">lower estimate</a></li>
+                    </ul>
+                    <ul id="growth">
+                        <li id="growth1"><a id="zero" href="javascript:void(0)" class="active">no growth</a></li>
+                        <li id="growth2"><a id="current" href="javascript:void(0)" class="">current growth</a></li>
+                        <li><a target="_blank" href="https://www.mcc-berlin.net/en/research/co2-budget.html " style="border: 0; background: black;"><img style="width: 100%;" src="/fileadmin/data/img/mcc_logo_rz_1c_negativ.png " 
+onmouseover="this.src='/fileadmin/data/img/mcc_logo_rz_1c_negativ_blue.png'"
+onmouseout="this.src='/fileadmin/data/img/mcc_logo_rz_1c_negativ.png'" /></a></li>
+
+                    </ul>
+                </div>  
+                <h1 id="global-temp">CO<sub>2</sub> emissions (tonnes/sec)</h1>
+                <div id="global-temp-container"><span id="currentrate" class="bold grad">1.293</span></div>
+                <h1 id="time-to-two">time left until CO<sub>2</sub> budget depleted</h1>
+                <div id="timecountdown">
+                    <table cellpadding=1 cellspacing=0>
+                        <tr>
+                            <th style="padding-left: 0;">year</th>
+                            <th>month</th>
+                            <th>day</th>
+                            <th>hour</th>
+                            <th>min</th>
+                            <th>sec</th>
+                            <th>&nbsp;</th>
+                        </tr><tr>
+                            <td id="years"></td>
+                            <td id="months"></td>
+                            <td id="days"></td>
+                            <td id="hours"></td>
+                            <td id="minutes"></td>
+                            <td id="seconds"></td>
+                            <td id="milliseconds"></td>
+                        </tr>
+                    </table>
+                </div>
+                <!--<h5 id="timecountdown-labels"><span>y&nbsp;&nbsp;</span><span>m&nbsp;&nbsp;</span><span>d&nbsp;&nbsp;</span><span>h&nbsp;&nbsp;</span><span>m&nbsp;&nbsp;</span><span>s&nbsp;&nbsp;</span><span>cs</span></h5>-->
+                <h1 id="tonnes">CO<sub>2</sub> budget left (tonnes)</h1>
+                <div id="carbontonnes">error</div>
+            </div>
+        </div>
+        <script>
+            switchScenarios();
+            $('#med').click();
+            $('#zero').click();
+        </script>
+    </body>
+</html>
